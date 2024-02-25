@@ -11,7 +11,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Please create a password"],
   },
-  postsCreated: [
+  posts: [
     {
       type: Schema.Types.ObjectId,
       ref: "Post",
@@ -19,7 +19,7 @@ const userSchema = new Schema({
   ],
   createdAt: {
     type: Date,
-    default: new Date().toLocaleDateString(),
+    default: Date.now,
   },
 });
 

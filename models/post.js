@@ -12,7 +12,7 @@ const postSchema = new Schema({
     required: [true, "All posts should have a description"],
   },
   domain: String,
-  creator: {
+  author: {
     type: Schema.Types.ObjectId,
     ref: "User"
   },
