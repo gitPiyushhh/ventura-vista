@@ -6,12 +6,14 @@ const dotenv = require("dotenv").config();
 const app = express();
 
 const gqlSchema = require("./graphql/schema/index")
-const gqlResolvers = require("./graphql/resolvers/index")
+const gqlResolvers = require("./graphql/resolvers/index");
+const isAuth = require("./middleware/isAuth");
 
 /* 
   Middlewares
 */
 app.use(bodyParser.json());
+app.use(isAuth);
 
 /* 
   Route mounting

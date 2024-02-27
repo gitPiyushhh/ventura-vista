@@ -15,6 +15,9 @@ type User {
     email: String!
     password: String
     posts: [Post]
+    coverLetter: ID
+    gmailMessage: ID
+    messageToRecruiter: ID
 }
 
 input PostInput {
@@ -30,10 +33,17 @@ input UserInput {
     password: String!
 }
 
+type AuthData {
+    userId: ID!
+    token: String!
+    tokenExpiration: Int!
+}
+
 type RootQuery {
     posts: [Post!]!
     users: [User!]!
     user(userId: String): User
+    login(email: String, password: String): AuthData!
 }
 
 type RootMutation {

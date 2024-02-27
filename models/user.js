@@ -11,6 +11,18 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Please create a password"],
   },
+  coverLetter: {
+    type: Schema.Types.ObjectId,
+    ref: "CoverLetter"
+  },
+  gmailMessage: {
+    type: Schema.Types.ObjectId,
+    ref: "GmailMessage"
+  },
+  messageToRecruiter: {
+    type: Schema.Types.ObjectId,
+    ref: "RecruiterMessage"
+  },
   posts: [
     {
       type: Schema.Types.ObjectId,

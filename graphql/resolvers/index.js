@@ -1,21 +1,25 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const Post = require("../../models/post");
 const User = require("../../models/user");
-const post = require("../../models/post");
 
 module.exports = {
   posts: async () => {
     const posts = await Post.find().populate("author");
 
     const formattedPosts = posts.map((post) => {
-        return {...post._doc, createdAt: post.createdAt.toISOString()}
-    })
+      return { ...post._doc, createdAt: post.createdAt.toISOString() };
+    });
 
-    return formattedPosts
+    return formattedPosts;
   },
 
-  createPost: async (args) => {
+  createPost: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("You are not authenticated..");
+    }
+
     const newPost = await Post.create({
       title: args.post.title,
       description: args.post.description,
@@ -62,5 +66,29 @@ module.exports = {
     });
 
     return newUser;
+  },
+
+  login: async ({ email, password }) => {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      throw new Error("No user exists with this mail id..");
+    }
+
+    const isEqual = await bcrypt.compare(password, user.password);
+
+    if (!isEqual) {
+      throw new Error("Invalid credentials..");
+    }
+
+    const token = await jwt.sign(
+      { userId: user?._id, email: user?.email },
+      process.env.JWT_KEY,
+      {
+        expiresIn: "1h",
+      }
+    );
+
+    return { userId: user._id, token, tokenExpiration: 1 };
   },
 };
