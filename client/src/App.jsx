@@ -1,11 +1,28 @@
-import React from 'react'
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import AppLayout from "./components/layout/AppLayout";
+import Authentication from "./pages/Authentication";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Authentication />,
+    children: [
+      {
+        path: "/signup",
+        element: <Authentication />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
-    <div className='text-stone-400'>
-      Hello from the server side ..
-    </div>
-  )
-}
+    <RouterProvider router={router}>
+      <AppLayout />
+    </RouterProvider>
+  );
+};
 
-export default App
+export default App;

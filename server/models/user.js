@@ -3,6 +3,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  firstName: {
+    type: String,
+    required: [true, "Please tell us your first name"],
+  },
+  lastName: {
+    type: String,
+    required: [true, "Please tell us your last name"],
+  },
+  title: {
+    type: String,
+    required: [true, "Please tell us your title"],
+  },
   email: {
     type: String,
     required: [true, "Please give us your email"],
