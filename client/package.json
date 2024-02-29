@@ -9,9 +9,6 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "build": {
-    "outDir": "dist" 
-  },
   "dependencies": {
     "@tanstack/react-query": "^5.24.1",
     "@tanstack/react-query-devtools": "^5.24.1",
