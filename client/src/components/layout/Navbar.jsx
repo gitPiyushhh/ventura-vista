@@ -45,7 +45,7 @@ const Navbar = () => {
           </div>
         </Button>
 
-        <ul className="flex justify-between items-center space-x-6">
+        <ul className="flex justify-between items-center space-x-6 mr-[-2rem]">
           {navbarMetaData.map((item) => (
             <li className="">
               <Button
