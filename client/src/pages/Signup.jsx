@@ -100,7 +100,7 @@ const Signup = () => {
             </div>
 
             <div className="flex space-x-4 justify-between items-center">
-              <Button type="button" primary={false}>
+              <Button type="button">
                 Signup with google
               </Button>
               <Button type="submit" primary={true}>

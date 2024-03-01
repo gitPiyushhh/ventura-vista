@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Button = ({ children, type, to, primary }) => {
+const Button = ({ children, type, to, primary, color }) => {
   const navigate = useNavigate();
 
 
   if (type === "link") {
     return (
       <span className="block" onClick={() => navigate(to)}>
-        <p className="text-cyan-500 hover:underline underline-offset-1 transition-all duration-300 cursor-pointer">
+        <p className={`${color ? `text-${color}` : 'text-cyan-500'} hover:underline underline-offset-4 transition-all duration-300 cursor-pointer`}>
           {children}
         </p>
       </span>
@@ -16,7 +16,7 @@ const Button = ({ children, type, to, primary }) => {
   }
 
   return (
-    <button className={`${primary ? 'bg-cyan-600' : 'bg-stone-600'} py-3 w-full rounded-full text-stone-100 hover:scale-105 transition-all duration-300`}>
+    <button className={`${primary ? 'bg-cyan-600' : 'bg-stone-600'} py-3 w-full rounded-lg text-stone-100 hover:scale-105 transition-all duration-300`}>
       {children}
     </button>
   );
