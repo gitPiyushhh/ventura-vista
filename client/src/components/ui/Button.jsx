@@ -16,7 +16,7 @@ const Button = ({ children, type, to, primary, color }) => {
   }
 
   return (
-    <button className={`${primary ? 'bg-cyan-600' : 'bg-stone-600'} py-3 w-full rounded-lg text-stone-100 hover:scale-105 transition-all duration-300`}>
+    <button className={`${primary ? 'bg-cyan-600' : 'bg-stone-600'} py-3 w-full rounded-lg shadow-lg text-stone-100 hover:scale-105 transition-all duration-300`}>
       {children}
     </button>
   );

@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className="flex justify-between items-center mt-10">
-      <div className="w-[88%] m-auto flex justify-between items-center">
+      <div className="w-[88%] h-[80vh] m-auto flex justify-between items-center">
         {/* Left side content */}
         <div className="flex-1 p-10">
           <div className="flex flex-col gap-5">
@@ -22,7 +22,7 @@ const Header = () => {
           </button>
         </div>
         {/* Right side image */}
-        <div className="flex-1 w-[40%] h-[36rem] p-8 relative">
+        <div className="flex-1 w-[40%] h-full p-8 relative">
           {/* Left-bottom */}
           <div className="flex justify-between items-center w-[24%] h-[24%] bg-stone-400 absolute top-0 right-0 rounded z-10 shadow-md">
             &nbsp;
