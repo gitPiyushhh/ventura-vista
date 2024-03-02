@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import GeneralHeader from "./components/layout/GeneralHeader";
+import Generative from "./pages/Generative";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
       {
         path: "/general",
         element: <GeneralHeader />,
+        path: "/generative",
+        element: <Generative />,
       },
     ],
   },
