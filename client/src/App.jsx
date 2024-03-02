@@ -6,6 +6,7 @@ import AppLayout from "./components/layout/AppLayout";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import GeneralHeader from "./components/layout/GeneralHeader";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/general",
+        element: <GeneralHeader />,
       },
     ],
   },
