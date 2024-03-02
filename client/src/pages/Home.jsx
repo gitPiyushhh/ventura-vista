@@ -123,7 +123,7 @@ const Home = () => {
             <div className="flex flex-col gap-4">
               {newsHighlightsMetaData.map((item) => (
                 <div className="flex justify-start items-center space-x-4 cursor-pointer" key={item?.id}>
-                  <img src="/graphics/sections/section-2.svg" alt="news_img" className="h-16 w-16 rounded-full bg-center border-[1px] border-stone-200 bg-cover !object-cover"/>
+                  <img src="/graphics/sections/section-2.svg" alt="news_img" className="h-16 w-16 rounded-full bg-center border-[1px] border-stone-2k00 bg-cover !object-cover"/>
 
                   <p className="text-lg text-stone-500">
                     {item?.desctiption}
