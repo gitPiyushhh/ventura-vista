@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const coverLetterSchema = new Schema({
+const resumeSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  content: {
+  tag: {
     type: String,
-    required: [true, "Please add some content here"],
+    default: "Generalised"
   },
   createdAt: {
     type: Date,
@@ -20,4 +20,4 @@ const coverLetterSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("CoverLetter", coverLetterSchema);
+module.exports = mongoose.model("CoverLetter", resumeSchema);

@@ -23,6 +23,24 @@ const sectionsMetaData = [
   },
 ];
 
+const newsHighlightsMetaData = [
+  {
+    id: 1,
+    desctiption:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation",
+  },
+  {
+    id: 2,
+    desctiption:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    id: 3,
+    desctiption:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation",
+  },
+];
+
 const Home = () => {
   return (
     <div className="flex flex-col">
@@ -102,15 +120,16 @@ const Home = () => {
               </p>
             </div>
 
-            <p className="text-lg text-stone-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore
-            </p>
+            <div className="flex flex-col gap-4">
+              {newsHighlightsMetaData.map((item) => (
+                <div className="flex justify-start items-center space-x-4 cursor-pointer" key={item?.id}>
+                  <img src="/graphics/sections/section-2.svg" alt="news_img" className="h-16 w-16 rounded-full bg-center border-[1px] border-stone-200 bg-cover !object-cover"/>
 
-            <div className="w-full">
-              <ListView points={sectionsMetaData[0].points} />
+                  <p className="text-lg text-stone-500">
+                    {item?.desctiption}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="w-[13rem]">
@@ -137,10 +156,6 @@ const Home = () => {
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore
             </p>
-
-            <div className="w-full">
-              <ListView points={sectionsMetaData[0].points} />
-            </div>
 
             <div className="w-[13rem]">
               <Button primary={true}>Manage your resume</Button>

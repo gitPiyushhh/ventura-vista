@@ -41,6 +41,18 @@ const userSchema = new Schema({
       ref: "Post",
     },
   ],
+  savedData: [
+    {
+      company: String,
+      experience: Number,
+      role: String,
+      skills: [
+        {
+          type: String
+        }
+      ]
+    }
+  ],
   createdAt: {
     type: Date,
     default: Date.now,
