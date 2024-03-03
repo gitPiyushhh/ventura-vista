@@ -27,8 +27,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/general",
-        element: <GeneralHeader />,
         path: "/generative",
         element: <Generative />,
       },
