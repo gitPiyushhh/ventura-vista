@@ -1,5 +1,6 @@
 import React from "react";
 import GeneralHeaderCard from "../ui/GeneralHeaderCard";
+import Button from "../ui/Button";
 
 function GeneralHeader({ cardsMetaData, heading }) {
   return (
@@ -29,6 +30,10 @@ function GeneralHeader({ cardsMetaData, heading }) {
               </div>
             </GeneralHeaderCard>
           ))}
+        </div>
+
+        <div className="w-[16rem] self-center mt-6">
+          <Button primary>Generate your documents</Button>
         </div>
       </div>
     </div>

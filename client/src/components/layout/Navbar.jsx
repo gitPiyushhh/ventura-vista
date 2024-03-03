@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 const navbarMetaData = [
   {
     name: "General",
-    to: "/",
+    to: "/generative",
     type: "link",
   },
   {
@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <div className="h-[4.5rem] w-full px-10 flex justify-center items-center">
       <div className="w-[88%] flex justify-between items-center">
-        <Button type="link" to="/">
+        <Button type="link" to="/home">
           <div className="flex space-x-2 justify-center items-center">
             <img src="/graphics/logo.svg" alt="Logo" className="w-10 h-10" />
             <p className="text-stone-600 capitalize">jobscribe</p>

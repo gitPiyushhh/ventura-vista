@@ -3,6 +3,9 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { uiState } from "../../atoms";
 
 const TabbedComponent = ({ tabsMetaData }) => {
+  /* 
+    Global state
+  */
   const { status, activeTab } = useRecoilValue(uiState);
   const setUiState = useSetRecoilState(uiState);
 
