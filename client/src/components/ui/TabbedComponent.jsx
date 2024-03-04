@@ -24,7 +24,7 @@ const TabbedComponent = ({ tabsMetaData }) => {
           className={`w-[33%] bg-stone-100 p-4 ${
             item?.id === 1 && "rounded-l-xl !border-r-0"
           } ${item?.id === tabsMetaData.length && "rounded-r-xl !border-l-0"} ${
-            activeTab === item?.name && "bg-stone-400 text-stone-800"
+            activeTab === item?.name && "bg-stone-300 text-stone-800"
           } text-center cursor-pointer transition-all duration-300 border-[1px] border-stone-400`}
           key={item?.id}
           onClick={() => handleTabClick(item?.name)}

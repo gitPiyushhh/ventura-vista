@@ -24,12 +24,12 @@ const navbarMetaData = [
   },
   {
     name: "Login",
-    to: "/",
+    to: "/login",
     primary: false,
   },
   {
     name: "Signup",
-    to: "/",
+    to: "/signup",
     primary: true,
   },
 ];
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         <ul className="flex justify-between items-center space-x-6 mr-[-2rem]">
           {navbarMetaData.map((item) => (
-            <li className="">
+            <li>
               <Button
                 type={item?.type}
                 color

@@ -2,13 +2,13 @@ import React from "react";
 import GeneralHeaderCard from "../ui/GeneralHeaderCard";
 import Button from "../ui/Button";
 
-function GeneralHeader({ cardsMetaData, heading }) {
+function GeneralHeader({ cardsMetaData, heading, handleButtonClick }) {
   return (
     <div className="w-full">
-      <div className="flex justify-between flex-col gap-8">
+      <div className="flex h-[80vh] justify-start items-center flex-col gap-8">
         {heading && <p className="text-3xl font-semibold">{heading}</p>}
-        
-        <div className="flex justify-between">
+
+        <div className="flex justify-between mt-8">
           {cardsMetaData.map((item) => (
             <GeneralHeaderCard key={item?.id}>
               <img
@@ -32,7 +32,7 @@ function GeneralHeader({ cardsMetaData, heading }) {
           ))}
         </div>
 
-        <div className="w-[16rem] self-center mt-6">
+        <div className="w-[16rem] self-center mt-6" onClick={handleButtonClick}>
           <Button primary>Generate your documents</Button>
         </div>
       </div>

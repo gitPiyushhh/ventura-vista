@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../ui/Button";
 
-const textMetaData = `Subject: Exploring Opportunities as a Software Development Engineer\n\nDear Hiring Manager,\n\nI hope this email finds you well. My name is [Your Name], and I am writing to express my keen interest in the Software Development Engineer (SDE) position at [Company Name] as advertised.\n\nI would welcome the opportunity to discuss how I can contribute to [Company Name] and bring my unique blend of skills and enthusiasm to your esteemed team. Thank you for considering my application.\n\nLooking forward to the possibility of further discussion.\n\nWarm regards,\n\n[Your Name]
+const textMetaData = `Subject: Exploring Opportunities as a Software Development Engineer\n\nDear Hiring Manager,\n\n\nI hope this email finds you well. My name is [Your Name], and I am writing to express my keen interest in the Software Development Engineer (SDE) position at [Company Name] as advertised.\n\nI would welcome the opportunity to discuss how I can contribute to [Company Name] and bring my unique blend of skills and enthusiasm to your esteemed team. Thank you for considering my application.\n\nLooking forward to the possibility of further discussion.\n\nWarm regards,\n\n[Your Name]
 [Your Address]\n[City, State, Zip Code]\n[Your Email Address]\n[Your Phone Number]\n[Date]
 `;
 
@@ -9,10 +9,10 @@ const Referal = () => {
   return (
     <div className="flex w-full justify-between items-start space-x-4 transition-all duration-300 mt-2">
       <div className="flex justify-between items-start w-[52%] space-x-16 relative">
-        <div className="bg-cyan-300 w-full h-[640px] p-4">
+        <div className="bg-stone-100 w-full h-[640px] p-6">
           <textarea
             value={textMetaData.replaceAll("%PREVIOUS_COMPANY_NAME%", "Google")}
-            className="bg-transparent w-full h-full overflow-y-auto white-space-pre-wrap"
+            className="bg-transparent w-full h-full overflow-y-auto white-space-pre-wrap text-stone-800"
           />
 
           <div className="w-full  h-[83%] absolute top-[6.8rem] left-0 bg-stone-900 opacity-70">
