@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Button = ({ children, type, to, primary, color }) => {
+const Button = ({ children, type, to, primary, color, disabled, onClick }) => {
   const navigate = useNavigate();
 
   if (type === "link") {
@@ -22,7 +22,8 @@ const Button = ({ children, type, to, primary, color }) => {
     return (
       <button
         className={`border-2 border-cyan-600 py-3 w-full rounded-lg shadow-lg text-cyan-600 hover:scale-105 transition-all duration-300`}
-        onClick={() => navigate(to)}
+        disabled={disabled}
+        onClick={onClick ? onClick : () => navigate(to)}
       >
         {children}
       </button>
@@ -32,9 +33,10 @@ const Button = ({ children, type, to, primary, color }) => {
   return (
     <button
       className={`${
-        primary ? "bg-cyan-600" : "bg-stone-600"
-      } flex justify-center items-center py-3 w-full rounded-lg shadow-lg text-stone-100 hover:scale-105 transition-all duration-300`}
-      onClick={() => navigate(to)}
+        primary ? "bg-cyan-600" : "bg-stone-500"
+      } flex justify-center items-center py-3 w-full rounded-lg shadow-lg text-stone-100 hover:scale-105 transition-all duration-300 ${disabled && '!bg-stone-400'}`}
+      disabled={disabled}
+      onClick={onClick ? onClick : () => navigate(to)}
     >
       {children}
     </button>

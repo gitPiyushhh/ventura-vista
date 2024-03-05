@@ -46,6 +46,25 @@ const cardsMetaData = [
   },
 ];
 
+const questionsMetaData = [
+  {
+    id: 1,
+    content: "Question-1?"
+  },
+  {
+    id: 2,
+    content: "Question-2 ?"
+  },
+  {
+    id: 3,
+    content: "Question-3 ?"
+  },
+  {
+    id: 4,
+    content: "Question-4 ?"
+  },
+]
+
 const Generative = () => {
   /* 
     Local state
@@ -130,7 +149,7 @@ const Generative = () => {
       {/* Modal */}
       {modalOpen && (
         <div className="absolute top-0 left-0 z-20">
-          <ModalFullScreen pages={2} handleModalClose={handleModalClose} />
+          <ModalFullScreen pages={2} handleModalClose={handleModalClose} perPageQuestions={2} questionsData={questionsMetaData}/>
         </div>
       )}
     </div>
